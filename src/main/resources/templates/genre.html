@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Genre</title>
+</head>
+<body>
+<h1>
+    <form th:action="@{/genre}" method="get">
+        Sök med genre: <input type="text" name="type" th:value="${type}"/>
+        <button type="submit">Sök</button>
+    </form>
+
+    <p th:if="${warningMessage != null}"
+       th:text="${warningMessage}">
+    </p>
+
+    <ul>
+        <li th:each="book : ${allBooks}"
+            th:text="${book}">
+        </li>
+    </ul>
+</h1>
+</body>
+</html>
